@@ -1,0 +1,333 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"st",
+				"static_cast"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"str",
+				"strcmp"
+			],
+			[
+				"I",
+				"IGraphicsDevice"
+			],
+			[
+				"scr",
+				"screensize"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"che",
+				"checkNotLogin"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"use",
+				"User"
+			],
+			[
+				"set",
+				"settings"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/aem/Develop/ACGE/src/device/framebuffer/graphice_device.cpp",
+		"/home/aem/Develop/ACGE/src/device/framebuffer/graphice_device.h",
+		"/home/aem/Develop/ACGE/src/device/hal_graphics_device.cpp",
+		"/home/aem/Develop/ACGE/src/device/hal_graphics_device.h",
+		"/home/aem/Develop/ACGE/src/device/i_graphics_drawpoint.h",
+		"/home/aem/Develop/ACGE/src/device/i_graphics_device.h",
+		"/home/aem/Develop/ACGE/src/device/i_unknow.h",
+		"/home/aem/Develop/ACGE/src/device/graphics_device_struct.h",
+		"/home/aem/Develop/ACGE/doc/ACGE_Design",
+		"/home/aem/Develop/ACGE/src/device/i_graphics_drawpoint.cpp",
+		"/home/aem/Develop/ACGE/src/device/hal_device.h",
+		"/home/aem/Develop/ACGE/src/device/device_struct.h",
+		"/home/aem/Develop/ACGE/src/device/i_device.h",
+		"/home/aem/Develop/ACGE/src/device/device.h",
+		"/home/aem/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/aem/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/aem/Develop/ACGE/src/setting.h",
+		"/home/aem/Develop/ACGE/src/main.cpp",
+		"/home/aem/Develop/ACGE/src/acge.h",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/layout.jade",
+		"/home/aem/bootstrap.html",
+		"/home/aem/bootstrap.jade",
+		"/home/aem/Develop/Microblog/views/home.ejs",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/index.jade",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/D_logincontest.jade",
+		"/home/aem/Develop/OJ/JXUSTOJ/src/js/global.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/public/js/global.js",
+		"/home/aem/Develop/OJ/Judger/judge/judge.h",
+		"/home/aem/Develop/OJ/JXUSTOJ/socket.js",
+		"/home/aem/Develop/OJ/Judger/daemon.py",
+		"/home/aem/Develop/OJ/JXUSTOJ/settings.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/routers/rejudge.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/routers/comment.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/routers/key.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/routers/index.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/routers/rating.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/package.json",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/status.jade",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/comment.jade",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/user.jade",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/post_list.jade",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/lang.jade",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/D_settings.jade",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/avatar.jade",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/D_broadcast.jade",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/sourcecode.jade",
+		"/home/aem/Develop/OJ/JXUSTOJ/app.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/comm/index.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/models/topic.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/models/comment.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/models/connect.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/models/contestrank.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/models/ids.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/models/overview.js",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/topiclist.jade",
+		"/home/aem/framebuffer/firstdraw.c",
+		"/home/aem/framebuffer/linedraw.c",
+		"/home/aem/framebuffer/screeninfo.c",
+		"/home/aem/Develop/PunchAndKick/install-sh",
+		"/home/aem/Develop/PunchAndKick-early-demo/src/skills_judo_master.c",
+		"/home/aem/Develop/PunchAndKick-early-demo/src/game_battle.c",
+		"/home/aem/Develop/PunchAndKick-early-demo/src/game_attack.c",
+		"/home/aem/Develop/PunchAndKick-early-demo/src/game_action.c",
+		"/home/aem/Develop/PunchAndKick-early-demo/src/game.h",
+		"/home/aem/Develop/OJ/JXUSTOJ/views/problemlist.jade",
+		"/home/aem/Develop/OJ/ACdream/views/layout.jade",
+		"/home/aem/Develop/OJ/JXUSTOJ/README.md",
+		"/home/aem/1.out",
+		"/home/aem/Develop/Microblog/routes/home.js",
+		"/home/aem/Develop/Microblog/routes/post.js",
+		"/home/aem/Develop/Microblog/routes/user.js",
+		"/home/aem/Develop/Microblog/views/layout.ejs",
+		"/home/aem/Downloads/microblog-1-master/views/posts.ejs",
+		"/home/aem/Develop/Microblog/views/posts.ejs",
+		"/home/aem/Develop/Microblog/views/say.ejs",
+		"/home/aem/Downloads/microblog-1-master/views/user.ejs",
+		"/home/aem/Downloads/microblog-1-master/views/say.ejs",
+		"/home/aem/Develop/Microblog/views/user.ejs",
+		"/home/aem/Develop/Microblog/app.js",
+		"/home/aem/Develop/Microblog/package.json",
+		"/home/aem/Develop/Microblog/views/error.ejs",
+		"/home/aem/Develop/Microblog/views/login.ejs",
+		"/home/aem/Develop/Microblog/views/reg.ejs",
+		"/home/aem/Develop/Microblog/models/post.js",
+		"/home/aem/Develop/Microblog/routes/logout.js",
+		"/home/aem/Develop/Microblog/routes/index.js",
+		"/home/aem/Develop/Microblog/routes/login.js",
+		"/home/aem/Develop/Microblog/models/user.js",
+		"/home/aem/Develop/Microblog/models/db.js",
+		"/home/aem/Develop/Microblog/routes/say.ejs",
+		"/home/aem/Develop/Microblog/views/user",
+		"/home/aem/Develop/Microblog/routes/u.js",
+		"/home/aem/Develop/Microblog/routes/reg.js",
+		"/home/aem/temp.cpp",
+		"/home/aem/opengl_version.cpp",
+		"/home/aem/Develop/Microblog/routes/safe.js",
+		"/home/aem/Develop/OJ/ACdream/routers/user.js",
+		"/home/aem/Develop/OJ/ACdream/routers/admin.js",
+		"/home/aem/Develop/OJ/ACdream/views/user.jade",
+		"/home/aem/Develop/OJ/ACdream/views/admin.jade",
+		"/home/aem/Develop/OJ/ACdream/routers/index.js",
+		"/home/aem/Develop/OJ/ACdream/routers/addproblem.js",
+		"/home/aem/Develop/OJ/ACdream/models/user.js",
+		"/home/aem/Develop/OJ/ACdream/routers/problem.js",
+		"/home/aem/Develop/OJ/ACdream/app.js",
+		"/home/aem/Develop/OJ/ACdream/models/connect.js",
+		"/home/aem/Downloads/microblog-1-master/models/user.js",
+		"/home/aem/Develop/Microblog/settings.js",
+		"/home/aem/Develop/Microblog/README.md",
+		"/home/aem/Downloads/microblog-1-master/routes/index.js",
+		"/home/aem/Downloads/microblog-1-master/views/layout.ejs",
+		"/home/aem/Downloads/microblog-1-master/app.js",
+		"/home/aem/Downloads/microblog-1-master/routes/users.js",
+		"/home/aem/Downloads/microblog-1-master/package.json",
+		"/home/aem/Develop/Microblog/modles/user.js",
+		"/home/aem/Develop/ACdream/app.js",
+		"/home/aem/Develop/Microblog/views/reg.js",
+		"/home/aem/Develop/Microblog/modles/db.js",
+		"/home/aem/Develop/Microblog/setting.js",
+		"/home/aem/Develop/ACdream/models/connect.js",
+		"/home/aem/Develop/ACdream/views/index.jade",
+		"/home/aem/Develop/ACdream/views/layout.jade",
+		"/home/aem/Develop/Microblog/routers/home.js",
+		"/home/aem/Develop/Microblog/routers/index.js",
+		"/home/aem/Develop/ACdream/routers/home.js",
+		"/home/aem/Develop/ACdream/routers/index.js",
+		"/home/aem/Develop/ACdream/routers/user.js",
+		"/home/aem/Develop/ACdream/routers/admin.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Blog",
+			"key",
+			"dropdown",
+			"stc",
+			"ProblemList",
+			"#",
+			"aem3372",
+			"Jxust",
+			"Just",
+			"KID",
+			"ACdream",
+			"partial",
+			"user",
+			"KEY",
+			"KEY.USER",
+			"List",
+			"render",
+			"MongoStore",
+			"Langs",
+			"io_",
+			"__i386__",
+			"io_redirect",
+			"io",
+			"Langs",
+			"output_result",
+			"io_redirect",
+			"tmdir",
+			"MongoClient",
+			"subprocess"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
