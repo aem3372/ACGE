@@ -8,8 +8,8 @@ bool HALGraphicsDevice::init(IGraphicsDevice* device)
 
 void HALGraphicsDevice::drawPoint(int x, int y)
 {
-    IDrawPoint* pd = device->query("IDrawPoint");
-    if(pd)
+    IDrawPoint* pd;
+    if(device->query("IDrawPoint", &pd))
         pd->drawPoint(x, y);
     else
         exit(80);

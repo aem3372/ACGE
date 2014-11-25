@@ -1,7 +1,7 @@
 #ifndef __ACGE_GRAPHICS_DEVEICE_INTERFACE__
 #define __ACGE_GRAPHICS_DEVEICE_INTERFACE__
 
-#include "device_struct.h"
+#include "graphics_device_struct.h"
 #include "i_unknow.h"
 
 class IGraphicsDevice

@@ -68,6 +68,31 @@ Interface采用COM的基础结构。保留Query通过char*查询以保留外部�
 有限状态机器
 通过状态机，减少参数传递。
 
+2014.11.24
+色彩机制：
+不同设备对色彩支持不一致，具体表现为：
+1.格式不同，浮点，整型
+2.编码不同，AARRGGBB，RRGGBB，RGB，ARGB，BBGGRRAA等
+同时HAL需要支持多种色彩形式。
+
+device编写者处理浮点精度问题和转换问题。
+
+IRGBColor
++getColor
++setColor
+
+IRGBFColor
++getColor
++setColor
+
+IARGBColor
++getColor
++setColor
+
+IARGBFColor
++getColor
++setColor
+
 ------------------------------代码规范----------------------------------
 类名样例 ClassName
 成员变量 class_value
