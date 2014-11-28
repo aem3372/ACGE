@@ -93,6 +93,9 @@ IARGBFColor
 +getColor
 +setColor
 
+2014.11.26
+修改接口机制
+增加ClearSuffer图形设备接口
 ------------------------------代码规范----------------------------------
 类名样例 ClassName
 成员变量 class_value

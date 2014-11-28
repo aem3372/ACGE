@@ -4,6 +4,7 @@
 class IDrawPoint
 : public IUnknow
 {
+public:
     virtual void drawPoint(int x, int y) = 0;
 };
 

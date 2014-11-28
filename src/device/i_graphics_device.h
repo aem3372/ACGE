@@ -7,6 +7,7 @@
 class IGraphicsDevice
 : public IUnknow
 {
+public:
     virtual GraphicsDeviceInfo getDeviceInfo() = 0;
 };
 

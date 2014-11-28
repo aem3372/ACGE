@@ -4,7 +4,7 @@
 class IUnknow
 {
 public:
-    virtual int queryInterface(char* unknow, void** pp) = 0;
+    virtual int queryInterface(const char* unknow, void** pp) = 0;
     virtual void retain() = 0;
     virtual void release() = 0;
 };
