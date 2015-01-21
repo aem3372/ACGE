@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{wallpaper}
+\usepackage{tikz}
+\usepackage{titlesec, titletoc} %设置标题格式
+\usepackage[top=1 in,bottom=1 in,left=1.25 in,right=1.25 in]{geometry}
+\setCJKmainfont{新宋体}
+\XeTeXlinebreaklocale zh
+\XeTeXlinebreakskip = 0pt plus 1pt
+\dottedcontents{chapter}[0.0em]{\vspace{0.5em}}{0.0em}{5pt}
+\dottedcontents{section}[1.16cm]{}{1.8em}{5pt}
+\dottedcontents{subsection}[2.00cm]{}{2.7em}{5pt}
+\dottedcontents{subsubsection}[2.86cm]{}{3.4em}{5pt}
+\setlength{\parindent}{2em} %段首缩进两格
+\setlength{\baselineskip}{1.8em} %中文行距
+\setlength{\parskip}{1ex} %段距
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+\newcommand{\xiaochu}{\fontsize{36pt}{\baselineskip}\selectfont}
+\newcommand{\yihao}{\fontsize{26pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoyi}{\fontsize{24pt}{\baselineskip}\selectfont}
+\newcommand{\erhao}{\fontsize{22pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoer}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{16pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosan}{\fontsize{15pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\banxiaosi}{\fontsize{13pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosi}{\fontsize{12pt}{\baselineskip}\selectfont}
+\newcommand{\dawu}{\fontsize{11pt}{\baselineskip}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowu}{\fontsize{9pt}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoliu}{\fontsize{6.5pt}{\baselineskip}\selectfont}
+\newcommand{\qihao}{\fontsize{5.5pt}{\baselineskip}\selectfont}
+\newcommand{\bahao}{\fontsize{5pt}{\baselineskip}\selectfont}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\setcounter{tocdepth}{3}
+\title{\erhao AC图形引擎设计方案}
+\author{aem3372}
+\begin{document}
+\maketitle
+\maketitle
+\newpage
+\tableofcontents
+\chapter{　图形引擎用户FAQ}
+\sihao{引擎是否线程安全？}
+
+\xiaosi{编译选项决定。}
+
+\chapter{　设备开发者FAQ}
+
+
+\end{document}

@@ -1,0 +1,10 @@
+[
+    {
+        "name":"gdiplus",
+        "path":"./libdevice-gdiplus.dll"
+    },
+    {
+        "name":"opengl",
+        "path":"./libdevice-opengl.dll"
+    }
+]

@@ -1,5 +1,5 @@
-#ifndef __ACGE_GRAPHICS_DEVICE_GDIPLUS_H__
-#define __ACGE_GRAPHICS_DEVICE_GDIPLUS_H__
+#ifndef __ACGE_GRAPHICS_DEVICE_OPENGL_H__
+#define __ACGE_GRAPHICS_DEVICE_OPENGL_H__
 
 #include "../i_graphics_device.h"
 

@@ -1,10 +1,8 @@
-﻿#include <cstdio>
+#include <cstdio>
 #include <cstdlib>
 #include "windows.h"
-#include "device/gdiplus/graphics_device.h"
-#include "device/graphics_device_struct.h"
+#include "device/graphics_device_factory.h"
 #include "device/i_graphics_device.h"
-
 // 全局变量:
 HINSTANCE hInst;                        // 当前实例
 HWND hWnd;
@@ -147,10 +145,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
     switch (message)
     {
-    case WM_PAINT:
-        hdc = BeginPaint(hWnd, &ps);
-        EndPaint(hWnd, &ps);
-        break;
     case WM_DESTROY:
         PostQuitMessage(0);
         break;
@@ -165,31 +159,25 @@ GraphicsDeviceInfo info;
 
 void Init()
 {
-    gd = createInstance();
-    if(gd)
-    {
-        GraphicsContext context;
-        context.hwnd = hWnd;
-        gd->initGraphics(&context);
-        info = gd->getDeviceInfo();
-        gd->setColor(1.0f, 1.0f, 0.0f, 0.0f);
-    }
-    else
-    {
-        printf("Get IGraphicsDevice Failed!\n");
-    }
+    gd = GraphicsDeviceFactory::getInstance()->createByName("gdiplus");
+    GraphicsContext context;
+    context.hwnd = hWnd;
+    gd->initGraphics(&context);
+    info = gd->getDeviceInfo();
+    gd->setColor(1.0f, 1.0f, 0.0f, 0.0f);
 }
 
 void Render()
 {
-    static int x = 0, y = 400; 
+static int x = 0, y = 400; 
     static int dx = 1;
     static int line_x = info.xres, line_y = 0;
     static int line_dy = 1;
-    
+
     gd->drawBegin();
     gd->clearSufface();
     gd->drawPoint(x ,y);
+    gd->drawLine(0,0, 500,400);
     gd->drawLine(0,0,line_x,line_y);
     gd->drawEnd();
 
@@ -197,6 +185,7 @@ void Render()
     {
         dx = -dx;
     }
+
     if(line_y+line_dy >= info.yres || line_y+line_dy <0)
     {
         line_dy = -line_dy;

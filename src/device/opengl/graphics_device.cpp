@@ -1,15 +1,13 @@
-﻿#include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-#include <windows.h>
-#define ULONG_PTR ULONG
-#include <gdiplus.h>//gdi+头文件
 
 #include "../i_graphics_device.h"
 #include "../graphics_device_struct.h"
-#include "math/point_transformator.h"
 #include "platform/text_log.h"
 
-using namespace Gdiplus;
+#include "opengl/gl.h"
+#include "opengl/glu.h"
 
 class GraphicsDevice
 : public IGraphicsDevice
@@ -31,18 +29,13 @@ public:
 private:
     HWND hwnd;
     HDC hdc;
-    GdiplusStartupInput gdiplusStartupInput;
-    ULONG_PTR pGdiToken;
-    Graphics *graphics;
-    Bitmap *bitmap;
-    Graphics *bitmapGraphics;
-    Pen *pen;
-    PointTransformator<int> trans;
-    int hight;
-    int width;
+    HGLRC hrc;
 };
 
 #include "graphics_device.h"
+
+static VOID EnableOpenGL(HWND hWnd, HDC* hDC, HGLRC* hRC);
+static VOID DisableOpenGL(HWND hWnd, HDC hDC, HGLRC hRC);
 
 GraphicsDevice::GraphicsDevice()
 {
@@ -52,42 +45,32 @@ GraphicsDevice::GraphicsDevice()
 GraphicsDevice::~GraphicsDevice()
 {
     if(hdc)
-        ReleaseDC(hwnd,hdc);
-    if(pen)
-        delete pen;
-    if(graphics)
-        delete graphics;
-    if(pGdiToken)
-        GdiplusShutdown(pGdiToken);//关闭GDI+
+        DisableOpenGL(hwnd, hdc, hrc);
 }
 
 void GraphicsDevice::drawPoint(int x, int y)
 {
-    trans.LT2LB(x,y,&x,&y);
-    bitmapGraphics->DrawRectangle(pen, x, y, 1, 1);
+    glBegin(GL_POINTS);
+    glVertex2i(x,y);
+    glEnd();
 }
 
 void GraphicsDevice::drawLine(int x1, int y1, int x2, int y2)
 {
-    trans.LT2LB(x1,y1,&x1,&y1);
-    trans.LT2LB(x2,y2,&x2,&y2);
-    bitmapGraphics->DrawLine(pen,x1,y1,x2,y2);
+    glBegin(GL_LINES);
+    glVertex2i(x1,y1);
+    glVertex2i(x2,y2);
+    glEnd();
 }
 
 void GraphicsDevice::setColor(float a, float r, float g, float b)
 {
-    unsigned char ua = a * 0xFF;
-    unsigned char ur = r * 0xFF;
-    unsigned char ug = g * 0xFF;
-    unsigned char ub = b * 0xFF;
-    Color gdiplusColor(ua, ur, ug, ub);
-    pen->SetColor(gdiplusColor);
+    glColor4f(r,g,b,a);
 }
 
 void GraphicsDevice::clearSufface()
 {
-    Color blackColor(0xFF, 0, 0, 0);
-    bitmapGraphics->Clear(blackColor);
+    glClear(GL_COLOR_BUFFER_BIT);
 }
 
 GraphicsDeviceInfo GraphicsDevice::getDeviceInfo()
@@ -95,8 +78,8 @@ GraphicsDeviceInfo GraphicsDevice::getDeviceInfo()
     GraphicsDeviceInfo info;
     RECT lpRect;  
     GetClientRect(hwnd, &lpRect);  
-    hight = lpRect.bottom - lpRect.top;  
-    width = lpRect.right - lpRect.left;  
+    int hight = lpRect.bottom - lpRect.top;  
+    int width = lpRect.right - lpRect.left;  
     info.xres = width;
     info.yres = hight;
     info.depth = 0;
@@ -105,29 +88,30 @@ GraphicsDeviceInfo GraphicsDevice::getDeviceInfo()
 
 void GraphicsDevice::initGraphics(GraphicsContext* context)
 {
-    GdiplusStartup(&pGdiToken,&gdiplusStartupInput,NULL);//初始化GDI+
     hwnd = context->hwnd;
-    hdc = ::GetDC(hwnd);
-    graphics = Graphics::FromHDC(hdc);
-
-    RECT lpRect;  
+    EnableOpenGL(hwnd, &hdc, &hrc);
+    glClearColor(0.0,0.0,0.0,0.0);
+    glColor4f(1.0,1.0,1.0,1.0);
+    glPointSize(2.0);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    
+    RECT lpRect;
     GetClientRect(hwnd, &lpRect);  
     int hight = lpRect.bottom - lpRect.top;  
     int width = lpRect.right - lpRect.left;  
-    trans.init(width, hight);
 
-    pen = new Pen(Color(0xFF, 0xFF, 0xFF, 0xFF));
-    bitmap = new Bitmap(width, hight);
+    gluOrtho2D(0.0,width,0.0,hight);
 }
 
 void GraphicsDevice::drawBegin()
 {
-    bitmapGraphics = Graphics::FromImage(bitmap);
+   
 }
 
 void GraphicsDevice::drawEnd()
 {
-    graphics->DrawImage(bitmap, 0,0,width,hight);
+    glFlush();
 }
 
 void GraphicsDevice::destory()
@@ -139,8 +123,6 @@ IGraphicsDevice* createInstance()
 {
     return static_cast<IGraphicsDevice*>(new GraphicsDevice());
 }
-
-
 
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
@@ -158,3 +140,35 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 	return TRUE;
 }
 
+//Enable OpenGL  
+   
+static VOID EnableOpenGL(HWND hWnd, HDC* hDC, HGLRC* hRC)
+{  
+    PIXELFORMATDESCRIPTOR pfd;  
+    int iFormat;  
+   
+    // get the devicecontext (DC)  
+    *hDC = GetDC( hWnd );  
+   
+    // set the pixelformat for the DC  
+    ZeroMemory( &pfd, sizeof( pfd ) );  
+    pfd.nSize        = sizeof(pfd);
+    pfd.nVersion     = 1;
+    pfd.dwFlags      = PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL;
+    pfd.cColorBits   = 32;
+    iFormat = ChoosePixelFormat( *hDC, &pfd);  
+    SetPixelFormat( *hDC, iFormat, &pfd );  
+   
+    // create andenable the render context (RC)  
+    *hRC = wglCreateContext( *hDC );  
+    wglMakeCurrent( *hDC, *hRC );  
+}  
+
+//Disable OpenGL  
+   
+static VOID DisableOpenGL(HWND hWnd, HDC hDC, HGLRC hRC)
+{
+  wglMakeCurrent( NULL, NULL);  
+  wglDeleteContext( hRC);  
+  ReleaseDC( hWnd, hDC);  
+}  

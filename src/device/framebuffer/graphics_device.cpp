@@ -1,6 +1,5 @@
 #include <cstring>
 #include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <fcntl.h>
@@ -12,6 +11,7 @@
 #include "../i_graphics_argbcolor.h"
 #include "../i_graphics_clearsufface.h"
 #include "../graphics_device_struct.h"
+#include "platform/text_log.h"
 
 class GraphicsDevice
 : public IDrawPoint
@@ -52,19 +52,19 @@ GraphicsDevice::GraphicsDevice(int fb)
 
     if(fp < 0)
     {
-        printf("Error: Can not open framebuffer device\n");
+        TextLog::error(0,"Error: Can not open framebuffer device\n");
         exit(1);
     }
 
     if(ioctl(fp,FBIOGET_FSCREENINFO,&finfo))
     {
-        printf("Error reading fixed information\n");
+        TextLog::error(0,"Error reading fixed information\n");
         exit(2);
     }
 
     if(ioctl(fp, FBIOGET_VSCREENINFO, &vinfo))
     {
-        printf("Error reading variable information\n");
+        TextLog::error(0,"Error reading variable information\n");
         exit(3);
     }
     
