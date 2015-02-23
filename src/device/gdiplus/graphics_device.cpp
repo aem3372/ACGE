@@ -6,7 +6,7 @@
 
 #include "../i_graphics_device.h"
 #include "../graphics_device_struct.h"
-#include "math/point_transformator.h"
+#include "point_transformator.h"
 #include "platform/text_log.h"
 
 using namespace Gdiplus;
@@ -76,10 +76,10 @@ void GraphicsDevice::drawLine(int x1, int y1, int x2, int y2)
 
 void GraphicsDevice::setColor(float a, float r, float g, float b)
 {
-    unsigned char ua = a * 0xFF;
-    unsigned char ur = r * 0xFF;
-    unsigned char ug = g * 0xFF;
-    unsigned char ub = b * 0xFF;
+	unsigned char ua = (unsigned char)a * 0xFF;
+	unsigned char ur = (unsigned char)r * 0xFF;
+	unsigned char ug = (unsigned char)g * 0xFF;
+	unsigned char ub = (unsigned char)b * 0xFF;
     Color gdiplusColor(ua, ur, ug, ub);
     pen->SetColor(gdiplusColor);
 }
