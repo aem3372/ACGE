@@ -1,7 +1,7 @@
 #ifndef __ACGE_GRAPHICS_DEVEICE_STRUCT__
 #define __ACGE_GRAPHICS_DEVEICE_STRUCT__
 
-#include "platform.h"
+#include "platform/platform_head.h"
 
 struct GraphicsDeviceInfo
 {

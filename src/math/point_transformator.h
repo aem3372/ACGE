@@ -13,6 +13,6 @@ private:
 	T yres;
 };
 
-#include "point_transformator.cpp"
+#include "private/point_transformator.cpp"
 
 #endif

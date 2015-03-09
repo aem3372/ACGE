@@ -6,7 +6,7 @@
 
 #include "../i_graphics_device.h"
 #include "../graphics_device_struct.h"
-#include "point_transformator.h"
+#include "math/point_transformator.h"
 #include "platform/text_log.h"
 
 using namespace Gdiplus;

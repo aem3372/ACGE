@@ -1,7 +1,7 @@
 #ifndef __ACGE_PLATFORM_TEXTLOG__
 #define __ACGE_PLATFORM_TEXTLOG__
 
-#include "platform.h"
+#include "platform/platform_head.h"
 
 struct TextLogStruct 
 {

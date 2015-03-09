@@ -1,7 +1,7 @@
 #ifndef __ACGE_PLATFORM_DYNAMIC_LINKER__
 #define __ACGE_PLATFORM_DYNAMIC_LINKER__
 
-#include "platform.h"
+#include "platform/platform_head.h"
 
 class DynamicLinker
 {
