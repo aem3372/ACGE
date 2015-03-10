@@ -1,6 +1,6 @@
 #include "math/point_transformator.h"
 #include <limits.h>
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
 
 TEST(FactorialTest, Positive) {
 	PointTransformator<int> trans;

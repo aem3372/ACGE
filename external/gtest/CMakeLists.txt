@@ -20,6 +20,8 @@ include_directories(${GTEST_INCLUDE})
 # Google Test libraries.  We build them using more strict warnings than what
 # are used for other targets, to ensure that gtest can be compiled by a user
 # aggressive about warnings.
+
+# use threads
 add_library(gtest src/gtest-all.cc)
 add_library(gtest_main src/gtest_main.cc)
-target_link_libraries(gtest_main gtest)
+target_link_libraries(gtest_main gtest pthread)
