@@ -22,29 +22,34 @@ DynamicLinker* DynamicLinker::getInstance()
     return instance;
 }
 
-void DynamicLinker::loadLibrary(const char* name, const char* path)
+bool DynamicLinker::loadLibrary(const char* name, const char* path)
 {
     if(impl->table.count(std::string(name)))
     {
         printf("error: name defined or library loaded!\n");
-    }
+		return false;
+	}
 
     HMODULE hModule = NULL;
     hModule = ::LoadLibrary(path);
     if(hModule == NULL)
     {
         printf("error: load fail!\n");
+		return false;
     }
     impl->table[std::string(name)] = hModule;
+	return true;
 }
 
-void DynamicLinker::freeLibrary(const char* name)
+bool DynamicLinker::freeLibrary(const char* name)
 {
     if(!impl->table.count(std::string(name)))
     {
         printf("error: library not load!\n");
-    }
+		return false;
+	}
     ::FreeLibrary(impl->table[std::string(name)]);
+	return true;
 }
 
 void* DynamicLinker::getProcAddress(const char* name, const char* procName)

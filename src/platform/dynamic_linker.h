@@ -7,8 +7,8 @@ class DynamicLinker
 {
 public:
 	static DynamicLinker* getInstance();
-    void loadLibrary(const char* name, const char* path);
-    void freeLibrary(const char* name);
+	bool loadLibrary(const char* name, const char* path);
+    bool freeLibrary(const char* name);
     void* getProcAddress(const char* name, const char* procName);
 private:
 	DynamicLinker();
