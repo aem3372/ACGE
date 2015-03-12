@@ -8,11 +8,12 @@ include_directories(${PROJECT_SOURCE_DIR}/external)
 option(BUILD_TESTS "Build Tests" ON)
 option(BUILD_EXAMPLES "Build Tests" ON)
 
-set(ACGE_ROOT "${PROJECT_SOURCE_DIR}")
+set(ACGE_ROOT ${PROJECT_SOURCE_DIR})
 
-set(ACGE_BINARY_DIR "${CMAKE_BINARY_DIR}/bin")
-set(ACGE_TESTS_DIR "${CMAKE_BINARY_DIR}/bin/tests")
-set(ACGE_EXAMPLES_DIR "${CMAKE_BINARY_DIR}/bin/examples")
+set(ACGE_BINARY_DIR ${CMAKE_BINARY_DIR}/bin)
+set(ACGE_EXTERNAL_DIR ${CMAKE_BINARY_DIR}/bin/external)
+set(ACGE_TESTS_DIR ${CMAKE_BINARY_DIR}/bin/tests)
+set(ACGE_EXAMPLES_DIR ${CMAKE_BINARY_DIR}/bin/examples)
 
 if(BUILD_TESTS)
 	add_subdirectory(tests)
@@ -23,7 +24,5 @@ if(BUILD_EXAMPLES)
 endif(BUILD_EXAMPLES)
 
 add_subdirectory(src acge)
-
-make_directory(bin)
 
 add_subdirectory(external)

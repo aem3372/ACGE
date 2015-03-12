@@ -61,3 +61,17 @@ link_directories(${gtest_BINARY_DIR}/src)
 cxx_library(gtest "${cxx_strict}" src/gtest-all.cc)
 cxx_library(gtest_main "${cxx_strict}" src/gtest_main.cc)
 target_link_libraries(gtest_main gtest)
+
+set_target_properties(gtest
+    PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${ACGE_EXTERNAL_DIR}/gtest"
+    ARCHIVE_OUTPUT_DIRECTORY "${ACGE_EXTERNAL_DIR}/gtest"
+    LIBRARY_OUTPUT_DIRECTORY "${ACGE_EXTERNAL_DIR}/gtest"
+)
+
+set_target_properties(gtest_main
+    PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${ACGE_EXTERNAL_DIR}/gtest"
+    ARCHIVE_OUTPUT_DIRECTORY "${ACGE_EXTERNAL_DIR}/gtest"
+    LIBRARY_OUTPUT_DIRECTORY "${ACGE_EXTERNAL_DIR}/gtest"
+)

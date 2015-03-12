@@ -1,4 +1,5 @@
 #include "platform/dynamic_linker.h"
+#include "../mock/mock_object.h"
 #include "gtest/gtest.h"
 
 TEST(DynamicLinkerTest, DeviceMoudle) {
@@ -7,9 +8,9 @@ TEST(DynamicLinkerTest, DeviceMoudle) {
 	// should check the file(DLL) existed. (not realization)
 
 	ASSERT_TRUE(
-		linker->loadLibrary("device-gdiplus", "resource\\libdevice-gdiplus.dll"));
+		linker->loadLibrary("MockObject", "mock_object.dll"));
 	ASSERT_NE(0,
-		(int)linker->getProcAddress("device-gdiplus", "createInstance"));
+		(int)linker->getProcAddress("MockObject", "createInstance"));
 	ASSERT_TRUE(
-		linker->freeLibrary("device-gdiplus"));
+		linker->freeLibrary("MockObject"));
 }

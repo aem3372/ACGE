@@ -20,3 +20,4 @@ set_target_properties(unit_tests
 )
 
 include(resource/CMakeLists.txt)
+add_subdirectory(mock)
