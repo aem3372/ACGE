@@ -1,5 +1,5 @@
 set(ACGE_DEVICE_GDIPLUS_SRC
-	graphics_device.cpp
+	GraphicsDevice.cpp
 )
 
 add_library(device_gdiplus SHARED

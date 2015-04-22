@@ -1,4 +1,4 @@
-#include "platform/dynamic_linker.h"
+#include "tools/DynamicLinker.h"
 #include "../mock/mock_object.h"
 #include "gtest/gtest.h"
 
